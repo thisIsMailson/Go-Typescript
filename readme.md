@@ -21,13 +21,13 @@ Open your terminal and start the party:
 ```bash
 docker-compose up -d db  # Start the database
 docker-compose up        # Launch Go backend, PostgreSQL, and Next.js frontend
-
+```
 # VIP Access: Database Connection
 
 Want to peek behind the scenes? Connect to the database:
 ```bash
 docker exec -it db psql -U postgres
-
+```
 
 # Prepping Next.js
 
@@ -36,11 +36,13 @@ In next.config.js, change:
 const nextConfig = {
   reactStrictMode: true,
 }
+```
 to:
 ```bash
 const nextConfig = {
   output: 'standalone',
 };
+```
 Finding Your Spot
 
     Frontend: http://localhost:3000
