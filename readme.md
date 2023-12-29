@@ -1,49 +1,67 @@
-Fullstack rest API in TypeScript and Go(Next 14, Go, Postgres, Docker)
-Overview
+# Fullstack rest API in TypeScript and Go(Next 14, Go, Postgres, Docker)
 
-Hey there! Welcome to our awesome project! 🚀 This project is a cool mix of a Go backend, a PostgreSQL database, and a Next.js 14 frontend. Together, they create a magical experience for handling users with all the CRUD (Create, Read, Update, Delete) actions.
-Getting Started
-Prerequisites
 
-To join the fun, make sure you have the following installed on your machine:
+## Overview
 
-    Docker
-    Docker Compose
+Welcome to our project! 🚀 This is a special blend of Go, PostgreSQL, and Next.js 14, working together to handle user-related actions. Buckle up for some CRUD magic!
 
-Quick Setup
+## Getting Started
 
-    Clone this project to your local machine.
-    Navigate to the project directory.
+### Prerequisites
+- Docker
+- Docker Compose
 
-Starting the Show
-Running the Application
+### Quick Setup
+1. Clone the project.
+2. Go to the project folder.
 
-Execute the following commands to start the application:
+### Let the Show Begin
+Open your terminal and start the party:
+
+```bash
 docker-compose up -d db  # Start the database
-docker-compose up        # Start the Go backend, PostgreSQL, and Next.js frontend
+docker-compose up        # Launch Go backend, PostgreSQL, and Next.js frontend
 
-Database Connection
+# VIP Access: Database Connection
 
-To connect to the PostgreSQL database, use the following command:
+Want to peek behind the scenes? Connect to the database:
+```bash
 docker exec -it db psql -U postgres
 
-docker exec -it db psql -U postgres
-Environment Variables
-Next.js (nextapp)
 
-    NEXT_PUBLIC_API_URL: URL for the Go backend API (default: http://localhost:8000)
+# Prepping Next.js
 
-Go Backend (goapp)
+In next.config.js, change:
+```bash
+const nextConfig = {
+  reactStrictMode: true,
+}
+to:
+```bash
+const nextConfig = {
+  output: 'standalone',
+};
+Finding Your Spot
+
+    Frontend: http://localhost:3000
+    Backend API: http://localhost:8000
+
+Behind the Scenes: Environment Variables
+For the Frontend (nextapp)
+
+    NEXT_PUBLIC_API_URL: Go backend API URL (default: http://localhost:8000)
+
+For the Go Backend (goapp)
 
     DATABASE_URL: PostgreSQL database connection URL
 
-PostgreSQL Database (db)
+For the PostgreSQL Database (db)
 
-    POSTGRES_USER: PostgreSQL username (default: postgres)
-    POSTGRES_PASSWORD: PostgreSQL password (default: postgres)
-    POSTGRES_DB: PostgreSQL database name (default: postgres)
+    POSTGRES_USER: Username (default: postgres)
+    POSTGRES_PASSWORD: Password (default: postgres)
+    POSTGRES_DB: Database name (default: postgres)
 
-Additional Notes
+Notes Backstage
 
-    Ensure that the necessary dependencies, such as Docker and Docker Compose, are installed on your machine.
-    The project contains Dockerfiles (next.dockerfile and go.dockerfile) for building the Next.js frontend and Go backend images.
+    Ensure Docker and Docker Compose are installed.
+    Check out Dockerfiles (next.dockerfile and go.dockerfile) for image secrets.
