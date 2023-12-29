@@ -29,7 +29,7 @@ Want to peek behind the scenes? Connect to the database:
 docker exec -it db psql -U postgres
 ```
 
-# Prepping Next.js
+# Prepping Next.js to be containarized
 
 In next.config.js, change:
 ```bash
